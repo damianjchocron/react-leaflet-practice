@@ -1,0 +1,37 @@
+version: "3.3"
+
+services:
+  app:
+    container_name: "${PROJECT_NAME}_react"
+    image: "${PROJECT_NAME}-app-dev"
+    environment:
+      REACT_APP_NAME: $PROJECT_NAME
+    build:
+      context: .
+      target: development
+    networks:
+      - web
+    volumes:
+      - ./app:/app
+    labels:
+      # Enable handler entrypoint on http.
+      - "traefik.http.routers.${PROJECT_NAME}_app-http.entrypoints=web"
+      # Define handler http host.
+      - "traefik.http.routers.${PROJECT_NAME}_app-http.rule=Host(`${DOCKER_URL}`)"
+      # Define http middleware and redirection to https.
+      - "traefik.http.routers.${PROJECT_NAME}_app-http.middlewares=${PROJECT_NAME}_app-https"
+      - "traefik.http.middlewares.${PROJECT_NAME}_app-https.redirectscheme.scheme=https"
+      # Enable handler entrypoint on https.
+      - "traefik.http.routers.${PROJECT_NAME}_app.entrypoints=websecure"
+      # Define handler host.
+      - "traefik.http.routers.${PROJECT_NAME}_app.rule=Host(`${DOCKER_URL}`)"
+      # Instructs Traefik that the current router is dedicated to HTTPS requests only.
+      - "traefik.http.routers.${PROJECT_NAME}_app.tls=true"
+      # Set service port for loadbalancer
+      - "traefik.http.services.${PROJECT_NAME}_app.loadbalancer.server.port=3000"
+      # Define on which network Traefik is operating.
+      - "traefik.docker.network=web"
+
+networks:
+  web:
+    external: true
