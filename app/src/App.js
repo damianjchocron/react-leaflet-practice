@@ -10,6 +10,10 @@ const StyledApp = styled.div`
     text-align: center;
     margin-bottom: 2rem;
   }
+  
+  .mapWrapper{
+    margin-bottom: 5rem;
+  }
 `
 
 
@@ -22,8 +26,10 @@ const App = () => {
 
   return (
     <StyledApp>
-      <h1>Map popup with market</h1>
-      <MapPopupWithMarket height={height} position={position} messagePopup={messagePopup} zoom={zoom} />
+      <div className="mapWrapper">
+        <h1>Map popup with market</h1>
+        <MapPopupWithMarket height={height} position={position} messagePopup={messagePopup} zoom={zoom} />
+      </div>
     </StyledApp>
   );
 }
