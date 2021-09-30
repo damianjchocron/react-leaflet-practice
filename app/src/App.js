@@ -1,5 +1,16 @@
 import React from 'react';
+import styled from 'styled-components';
 import MapPopupWithMarket from './components/maps/MapPopupWithMarket';
+
+const StyledApp = styled.div`
+  height: 100%;
+  padding: 3%;
+
+  h1{
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+`
 
 
 const App = () => {
