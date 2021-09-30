@@ -1,21 +1,19 @@
 import React from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import MapPopupWithMarket from './components/maps/MapPopupWithMarket';
+
 
 const App = () => {
+
+  const height = '50vh';
+  const position = [51.505, -0.09];
+  const messagePopup = 'This is the message';
+  const zoom = 13;
+
   return (
-    <div>
-      <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
-        <TileLayer
-          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        <Marker position={[51.505, -0.09]}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker>
-      </MapContainer>
-    </div>
+    <StyledApp>
+      <h1>Map popup with market</h1>
+      <MapPopupWithMarket height={height} position={position} messagePopup={messagePopup} zoom={zoom} />
+    </StyledApp>
   );
 }
 
