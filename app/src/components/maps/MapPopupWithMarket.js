@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css';
@@ -31,3 +32,10 @@ const MapPopupWithMarket = ({ height, position, messagePopup, zoom }) => {
 }
 
 export default MapPopupWithMarket;
+
+MapPopupWithMarket.propTypes = {
+    height: PropTypes.string,
+    position: PropTypes.array.isRequired,
+    messagePopup: PropTypes.string.isRequired,
+    zoom: PropTypes.number.isRequired
+}
