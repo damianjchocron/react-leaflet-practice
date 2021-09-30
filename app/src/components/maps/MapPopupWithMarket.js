@@ -4,10 +4,6 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css';
 
 const StyledMap = styled.div`
-    ${MapContainer}{
-        height: ${props => props.height ? props.height : '25vh'};
-    }
-
     .leaflet-container{
     height: ${props => props.height ? props.height : '25vh'}; 
     }
