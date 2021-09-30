@@ -5,7 +5,7 @@ import 'leaflet/dist/leaflet.css';
 
 const StyledMap = styled.div`
     .leaflet-container{
-    height: ${props => props.height ? props.height : '25vh'}; 
+        height: ${props => props.height ? props.height : '25vh'}; 
     }
 `
 
