@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import Map from '../molecules/Map';
-import { Circle, CircleMarker, Polyline, Polygon, Rectangle, Popup } from 'react-leaflet'
+import { Circle, CircleMarker, Polyline, Polygon, Rectangle, Popup, Tooltip } from 'react-leaflet'
 
 /* TODOD: move this to a component */
 /* TODOD: add props of vector data and colores */
@@ -64,7 +64,9 @@ const VectorLayers = ({ position }) => {
             <CircleMarker center={[51.51, -0.12]} pathOptions={redOptions} radius={20}>
                 <Popup>Popup in CircleMarker</Popup>
             </CircleMarker>
-            <Polyline pathOptions={limeOptions} positions={polyline} />
+            <Polyline pathOptions={limeOptions} positions={polyline} >
+                <Tooltip>Tooltip for Marker</Tooltip>
+            </Polyline>
             <Polyline pathOptions={limeOptions} positions={multiPolyline} />
             <Polygon pathOptions={purpleOptions} positions={polygon} />
             <Polygon pathOptions={purpleOptions} positions={multiPolygon} />
