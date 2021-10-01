@@ -36,6 +36,11 @@ const App = () => {
         <h1>Map with event location found on click</h1>
         <MapEventLocationFound height={height} position={position} messagePopup={messagePopup} zoom={zoom} />
       </div>
+
+      <div className="mapWrapper">
+        <h1>Map with vector layers</h1>
+        <MapVectorLayers height={height} position={position} messagePopup={messagePopup} zoom={zoom} />
+      </div>
     </StyledApp>
   );
 }
