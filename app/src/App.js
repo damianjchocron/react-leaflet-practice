@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import MapPopupWithMarket from './components/maps/MapPopupWithMarket';
-import MapEventLocationFound from './components/maps/MapEventLocationFound';
+import MapPopupWithMarket from './components/organims/MapPopupWithMarket';
+import MapEventLocationFound from './components/organims/MapEventLocationFound';
+import MapVectorLayers from './components/organims/MapVectorLayers';
 
 const StyledApp = styled.div`
   height: 100%;

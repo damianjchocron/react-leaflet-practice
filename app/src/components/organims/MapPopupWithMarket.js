@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import Map from './Map';
+import Map from '../molecules/Map';
 import { Marker, Popup } from 'react-leaflet'
 
 const PopupWithMarket = ({ position, messagePopup }) => {
