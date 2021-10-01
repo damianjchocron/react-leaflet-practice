@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import MapPopupWithMarket from './components/organims/MapPopupWithMarket';
 import MapEventLocationFound from './components/organims/MapEventLocationFound';
 import MapVectorLayers from './components/organims/MapVectorLayers';
+import MapSvgOverlay from './components/organims/MapSvgOverlay';
 
 const StyledApp = styled.div`
   height: 100%;
@@ -41,6 +42,12 @@ const App = () => {
         <h1>Map with vector layers</h1>
         <MapVectorLayers height={height} position={position} messagePopup={messagePopup} zoom={zoom} />
       </div>
+
+      <div className="mapWrapper">
+        <h1>Map with SvgOverlay</h1>
+        <MapSvgOverlay height={height} position={position} messagePopup={messagePopup} zoom={zoom} />
+      </div>
+
     </StyledApp>
   );
 }
