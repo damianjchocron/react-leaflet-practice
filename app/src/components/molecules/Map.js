@@ -9,6 +9,7 @@ const StyledMap = styled.div`
     }
 `
 
+/* TODOD: change the name of CustomMarket for other more properly */
 const Map = ({ height, position, zoom, CustonMarket }) => {
     /* TODOD: add state for the props */
 

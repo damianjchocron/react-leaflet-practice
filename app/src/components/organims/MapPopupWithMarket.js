@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import Map from '../molecules/Map';
 import { Marker, Popup } from 'react-leaflet'
 
+/* TODOD: move this to a component */
 const PopupWithMarket = ({ position, messagePopup }) => {
     /* TODOD: add state for the props */
 

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Marker, Popup, useMapEvents } from 'react-leaflet'
 import Map from '../molecules/Map';
 
+/* TODOD: move this to a component */
 const MapEventLocationFound = ({ height, position, messagePopup, zoom }) => {
     /* TODOD: add state for the props */
 

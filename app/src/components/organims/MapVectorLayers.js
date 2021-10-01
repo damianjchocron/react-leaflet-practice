@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Map from '../molecules/Map';
 import { Circle, CircleMarker, Polyline, Polygon, Rectangle, Popup } from 'react-leaflet'
 
-
+/* TODOD: move this to a component */
 /* TODOD: add props of vector data and colores */
 const VectorLayers = ({ position }) => {
 
