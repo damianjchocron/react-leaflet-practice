@@ -4,7 +4,9 @@ import { Marker, Popup, useMapEvents } from 'react-leaflet'
 import Map from '../molecules/Map';
 
 const MapEventLocationFound = ({ height, position, messagePopup, zoom }) => {
+    /* TODOD: add state for the props */
 
+    /* TODOD: add useCallback to LocationMarket */
     const LocationMarker = () => {
         const [position, setPosition] = useState(null)
         const map = useMapEvents({

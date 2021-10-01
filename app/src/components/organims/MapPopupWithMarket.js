@@ -3,6 +3,8 @@ import Map from '../molecules/Map';
 import { Marker, Popup } from 'react-leaflet'
 
 const PopupWithMarket = ({ position, messagePopup }) => {
+    /* TODOD: add state for the props */
+
     return (
         <Marker position={position}>
             <Popup>
@@ -13,6 +15,8 @@ const PopupWithMarket = ({ position, messagePopup }) => {
 }
 
 const MapPopupWithMarket = ({ height, position, messagePopup, zoom }) => {
+    /* TODOD: add state for the props */
+
     return (
         <Map height={height}
             position={position}

@@ -10,6 +10,8 @@ const StyledMap = styled.div`
 `
 
 const Map = ({ height, position, zoom, CustonMarket }) => {
+    /* TODOD: add state for the props */
+
     return (
         <StyledMap height={height}>
             <MapContainer center={position} zoom={zoom} scrollWheelZoom={false}>
