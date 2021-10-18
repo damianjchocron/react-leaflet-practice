@@ -10,7 +10,7 @@ const StyledMap = styled.div`
 `
 
 /* TODOD: change the name of CustomMarket for other more properly */
-const Map = ({ height, position, zoom, CustonMarket }) => {
+const Map = ({ height, position, zoom, CustonMarket, children }) => {
     /* TODOD: add state for the props */
 
     return (
@@ -20,7 +20,11 @@ const Map = ({ height, position, zoom, CustonMarket }) => {
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
+
                 {CustonMarket}
+
+                {children && children}
+
             </MapContainer>
         </StyledMap>
     )
