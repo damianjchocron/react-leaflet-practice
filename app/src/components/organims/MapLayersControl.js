@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { MapContainer, TileLayer, Circle, LayerGroup, FeatureGroup, Popup, Rectangle, LayersControl, Marker} from 'react-leaflet';
+import { MapContainer, TileLayer, Circle, LayerGroup, FeatureGroup, Popup, Rectangle, LayersControl, Marker } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
 const StyledMap = styled.div`
@@ -8,7 +8,7 @@ const StyledMap = styled.div`
     }
 `
 
-const MapLayersControl = () => {
+const MapLayersControl = ({ height }) => {
     const center = [51.505, -0.09]
     const rectangle = [
         [51.49, -0.08],
@@ -16,7 +16,7 @@ const MapLayersControl = () => {
     ]
 
     return (
-        <StyledMap>
+        <StyledMap height={height}>
             <MapContainer center={center} zoom={13} scrollWheelZoom={false}>
                 <LayersControl position="topright">
                     <LayersControl.BaseLayer checked name="OpenStreetMap.Mapnik">
