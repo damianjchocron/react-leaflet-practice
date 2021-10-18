@@ -7,6 +7,7 @@ import MapVectorLayers from './components/organims/MapVectorLayers';
 import MapSvgOverlay from './components/organims/MapSvgOverlay';
 import MapLayersControl from './components/organims/MapLayersControl';
 import MapBlinkingPan from './components/organims/MapBlinkingPane';
+import MapDraggableMarket from './components/organims/MapDraggableMarket';
 
 const StyledApp = styled.div`
   height: 100%;
@@ -59,6 +60,11 @@ const App = () => {
       <div className="mapWrapper">
         <h1>Map with Blinking Pane</h1>
         <MapBlinkingPan height={height} position={position} messagePopup={messagePopup} zoom={zoom} />
+      </div>
+
+      <div className="mapWrapper">
+        <h1>Map with Draggable Maket</h1>
+        <MapDraggableMarket height={height} position={position} messagePopup={messagePopup} zoom={zoom} />
       </div>
 
     </StyledApp>
