@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import MapPopupWithMarket from './components/organims/MapPopupWithMarket';
 import MapEventLocationFound from './components/organims/MapEventLocationFound';
 import MapVectorLayers from './components/organims/MapVectorLayers';
 import MapSvgOverlay from './components/organims/MapSvgOverlay';
 import MapLayersControl from './components/organims/MapLayersControl';
+import MapBlinkingPan from './components/organims/MapBlinkingPane';
 
 const StyledApp = styled.div`
   height: 100%;
@@ -52,6 +54,11 @@ const App = () => {
       <div className="mapWrapper">
         <h1>Map with Layers control</h1>
         <MapLayersControl height={height} position={position} messagePopup={messagePopup} zoom={zoom} />
+      </div>
+
+      <div className="mapWrapper">
+        <h1>Map with Blinking Pane</h1>
+        <MapBlinkingPan height={height} position={position} messagePopup={messagePopup} zoom={zoom} />
       </div>
 
     </StyledApp>
