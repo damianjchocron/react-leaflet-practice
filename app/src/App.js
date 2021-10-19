@@ -64,7 +64,11 @@ const App = () => {
 
       <div className="mapWrapper">
         <h1>Map with Draggable Maket</h1>
-        <MapDraggableMarket height={height} position={position} messagePopup={messagePopup} zoom={zoom} />
+      <div className="mapWrapper">
+        <h1>Map Animated Panning</h1>
+        <MapAnimatedPanning height={height} position={position} zoom={zoom} />
+      </div>
+
       </div>
 
     </StyledApp>
