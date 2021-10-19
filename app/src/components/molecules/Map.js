@@ -5,17 +5,17 @@ import 'leaflet/dist/leaflet.css';
 
 const StyledMap = styled.div`
     .leaflet-container{
-        height: ${props => props.height ? props.height : '25vh'}; 
+        height: ${props => props.height ? props.height : '50vh'}; 
     }
 `
 
 /* TODOD: change the name of CustomMarket for other more properly */
-const Map = ({ height, position, zoom, CustonMarket, children }) => {
+const Map = ({ height, position, zoom, CustonMarket, children, whenCreated }) => {
     /* TODOD: add state for the props */
 
     return (
         <StyledMap height={height}>
-            <MapContainer center={position} zoom={zoom} scrollWheelZoom={false}>
+            <MapContainer center={position} zoom={zoom} scrollWheelZoom={false} whenCreated={whenCreated}>
                 <TileLayer
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
