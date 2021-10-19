@@ -1,5 +1,5 @@
 import { useState, useRef, useMemo, useCallback } from 'react';
-import { Marker, Popup } from 'leaflet'
+import { Marker, Popup } from 'react-leaflet'
 
 import Map from '../molecules/Map';
 
@@ -43,7 +43,7 @@ const MapDraggableMarket = ({ height, position, zoom }) => {
             position={position}
             zoom={zoom}
             scrollWheelZoom={false}
-            CustonMarket={< DraggableMarker position={position} />}
+            CustonMarket={<DraggableMarker center={position} />}
         />)
 }
 
