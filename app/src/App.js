@@ -7,7 +7,7 @@ import MapVectorLayers from './components/organims/MapVectorLayers';
 import MapSvgOverlay from './components/organims/MapSvgOverlay';
 import MapLayersControl from './components/organims/MapLayersControl';
 import MapBlinkingPan from './components/organims/MapBlinkingPane';
-import MapDraggableMarket from './components/organims/MapDraggableMarket';
+import MapDraggableMarker from './components/organims/MapDraggableMarker';
 import MapAnimatedPanning from './components/organims/MapAnimatedPanning';
 import MapExternalState from './components/organims/MapExternalState';
 
@@ -65,8 +65,8 @@ const App = () => {
       </div>
 
       <div className="mapWrapper">
-        <h1>Map with Draggable Maket</h1>
-        <MapDraggableMarket height={height} position={position} zoom={zoom} />
+        <h1>Map with Draggable Maker</h1>
+        <MapDraggableMarker height={height} position={position} zoom={zoom} />
       </div>
 
       <div className="mapWrapper">

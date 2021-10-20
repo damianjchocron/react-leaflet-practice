@@ -38,7 +38,7 @@ const DraggableMarker = ({ center }) => {
     )
 }
 
-const MapDraggableMarket = ({ height, position, zoom }) => {
+const MapDraggableMarker = ({ height, position, zoom }) => {
 
     return (
         <Map height={height}
@@ -49,4 +49,4 @@ const MapDraggableMarket = ({ height, position, zoom }) => {
         />)
 }
 
-export default MapDraggableMarket;
+export default MapDraggableMarker;
