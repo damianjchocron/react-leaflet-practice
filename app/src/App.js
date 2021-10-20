@@ -6,7 +6,7 @@ import MapEventLocationFound from './components/organims/MapEventLocationFound';
 import MapVectorLayers from './components/organims/MapVectorLayers';
 import MapSvgOverlay from './components/organims/MapSvgOverlay';
 import MapLayersControl from './components/organims/MapLayersControl';
-import MapBlinkingPan from './components/organims/MapBlinkingPane';
+import MapBlinkingCircle from './components/organims/MapBlinkingCircle';
 import MapDraggableMarker from './components/organims/MapDraggableMarker';
 import MapAnimatedPanning from './components/organims/MapAnimatedPanning';
 import MapExternalState from './components/organims/MapExternalState';
@@ -60,8 +60,8 @@ const App = () => {
       </div>
 
       <div className="mapWrapper">
-        <h1>Map with Blinking Pane</h1>
-        <MapBlinkingPan height={height} position={position} zoom={zoom} />
+        <h1>Map with Blinking Circle</h1>
+        <MapBlinkingCircle height={height} position={position} zoom={zoom} />
       </div>
 
       <div className="mapWrapper">
