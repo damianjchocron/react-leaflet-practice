@@ -2,6 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Marker, Popup, useMapEvents } from 'react-leaflet'
 import Map from '../molecules/Map';
+import MarkerIcon from '../atoms/MarkerIcon';
 
 /* TODOD: move this to a component */
 const MapEventLocationFound = ({ height, position, messagePopup, zoom }) => {
@@ -21,7 +22,7 @@ const MapEventLocationFound = ({ height, position, messagePopup, zoom }) => {
         })
 
         return position === null ? null : (
-            <Marker position={position}>
+            <Marker position={position} icon={MarkerIcon}>
                 <Popup>{messagePopup}</Popup>
             </Marker>
         )
