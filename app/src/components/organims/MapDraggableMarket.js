@@ -1,5 +1,6 @@
 import { useState, useRef, useMemo, useCallback } from 'react';
 import { Marker, Popup } from 'react-leaflet'
+import MarkerIcon from '../atoms/MarkerIcon';
 
 import Map from '../molecules/Map';
 
@@ -24,7 +25,8 @@ const DraggableMarker = ({ center }) => {
             draggable={draggable}
             eventHandlers={eventHandlers}
             position={position}
-            ref={markerRef}>
+            ref={markerRef}
+            icon={MarkerIcon}>
             <Popup minWidth={90}>
                 <span onClick={toggleDraggable}>
                     {draggable
