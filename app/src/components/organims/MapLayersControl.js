@@ -1,75 +1,69 @@
-import styled from 'styled-components';
-import { MapContainer, TileLayer, Circle, LayerGroup, FeatureGroup, Popup, Rectangle, LayersControl, Marker } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
+import { TileLayer, Circle, LayerGroup, FeatureGroup, Popup, Rectangle, LayersControl, Marker } from 'react-leaflet';
 
-const StyledMap = styled.div`
-    .leaflet-container{
-        height: ${props => props.height ? props.height : '25vh'}; 
-    }
-`
+import Map from '../molecules/Map';
 
-const MapLayersControl = ({ height }) => {
-    const center = [51.505, -0.09]
+const MapLayersControl = ({ height, position, zoom }) => {
     const rectangle = [
         [51.49, -0.08],
         [51.5, -0.06],
     ]
 
     return (
-        <StyledMap height={height}>
-            <MapContainer center={center} zoom={13} scrollWheelZoom={false}>
-                <LayersControl position="topright">
-                    <LayersControl.BaseLayer checked name="OpenStreetMap.Mapnik">
-                        <TileLayer
-                            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        <Map height={height}
+            position={position}
+            zoom={zoom}
+            scrollWheelZoom={false}>
+            <LayersControl position="topright">
+                <LayersControl.BaseLayer checked name="OpenStreetMap.Mapnik">
+                    <TileLayer
+                        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    />
+                </LayersControl.BaseLayer>
+                <LayersControl.BaseLayer name="OpenStreetMap.BlackAndWhite">
+                    <TileLayer
+                        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                        url="https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png"
+                    />
+                </LayersControl.BaseLayer>
+                <LayersControl.Overlay name="Marker with popup">
+                    <Marker position={position}>
+                        <Popup>
+                            A pretty CSS3 popup. <br /> Easily customizable.
+                        </Popup>
+                    </Marker>
+                </LayersControl.Overlay>
+                <LayersControl.Overlay checked name="Layer group with circles">
+                    <LayerGroup>
+                        <Circle
+                            center={position}
+                            pathOptions={{ fillColor: 'blue' }}
+                            radius={200}
                         />
-                    </LayersControl.BaseLayer>
-                    <LayersControl.BaseLayer name="OpenStreetMap.BlackAndWhite">
-                        <TileLayer
-                            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                            url="https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png"
+                        <Circle
+                            center={position}
+                            pathOptions={{ fillColor: 'red' }}
+                            radius={100}
+                            stroke={false}
                         />
-                    </LayersControl.BaseLayer>
-                    <LayersControl.Overlay name="Marker with popup">
-                        <Marker position={center}>
-                            <Popup>
-                                A pretty CSS3 popup. <br /> Easily customizable.
-                            </Popup>
-                        </Marker>
-                    </LayersControl.Overlay>
-                    <LayersControl.Overlay checked name="Layer group with circles">
                         <LayerGroup>
                             <Circle
-                                center={center}
-                                pathOptions={{ fillColor: 'blue' }}
-                                radius={200}
-                            />
-                            <Circle
-                                center={center}
-                                pathOptions={{ fillColor: 'red' }}
+                                center={[51.51, -0.08]}
+                                pathOptions={{ color: 'green', fillColor: 'green' }}
                                 radius={100}
-                                stroke={false}
                             />
-                            <LayerGroup>
-                                <Circle
-                                    center={[51.51, -0.08]}
-                                    pathOptions={{ color: 'green', fillColor: 'green' }}
-                                    radius={100}
-                                />
-                            </LayerGroup>
                         </LayerGroup>
-                    </LayersControl.Overlay>
-                    <LayersControl.Overlay name="Feature group">
-                        <FeatureGroup pathOptions={{ color: 'purple' }}>
-                            <Popup>Popup in FeatureGroup</Popup>
-                            <Circle center={[51.51, -0.06]} radius={200} />
-                            <Rectangle bounds={rectangle} />
-                        </FeatureGroup>
-                    </LayersControl.Overlay>
-                </LayersControl>
-            </MapContainer>
-        </StyledMap>
+                    </LayerGroup>
+                </LayersControl.Overlay>
+                <LayersControl.Overlay name="Feature group">
+                    <FeatureGroup pathOptions={{ color: 'purple' }}>
+                        <Popup>Popup in FeatureGroup</Popup>
+                        <Circle center={[51.51, -0.06]} radius={200} />
+                        <Rectangle bounds={rectangle} />
+                    </FeatureGroup>
+                </LayersControl.Overlay>
+            </LayersControl>
+        </Map>
     )
 }
 
