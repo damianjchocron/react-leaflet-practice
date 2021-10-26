@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState } from "react";
 
 import Map from "../molecules/Map";
 import DisplayPosition from "../molecules/DisplayPosition";
