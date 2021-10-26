@@ -13,9 +13,9 @@ const MapSvgOverlay = ({ height, position, messagePopup, zoom }) => {
         <Map height={height}
             position={position}
             zoom={zoom}
-            scrollWheelZoom={false}
-            CustonMarket={<SvgOverlay messagePopup={messagePopup} bounds={bounds} />}
-        />
+            scrollWheelZoom={false}>
+            <SvgOverlay messagePopup={messagePopup} bounds={bounds} />
+        </Map>
     )
 }
 
