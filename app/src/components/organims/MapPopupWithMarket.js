@@ -1,30 +1,16 @@
 import PropTypes from 'prop-types';
+
 import Map from '../molecules/Map';
-import { Marker, Popup } from 'react-leaflet';
-import MarkerIcon from '../atoms/MarkerIcon';
-
-/* TODOD: move this to a component */
-const PopupWithMarket = ({ position, messagePopup }) => {
-    /* TODOD: add state for the props */
-
-    return (
-        <Marker position={position} icon={MarkerIcon}>
-            <Popup>
-                {messagePopup}
-            </Popup>
-        </Marker>
-    )
-}
+import PopupWithMarker from '../molecules/PopupWithMarker';
 
 const MapPopupWithMarket = ({ height, position, messagePopup, zoom }) => {
-    /* TODOD: add state for the props */
 
     return (
         <Map height={height}
             position={position}
             zoom={zoom}
             scrollWheelZoom={false}>
-            <PopupWithMarket position={position} messagePopup={messagePopup} />
+            <PopupWithMarker position={position} messagePopup={messagePopup} />
         </Map>
     )
 }
