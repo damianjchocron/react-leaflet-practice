@@ -32,9 +32,9 @@ const MapEventLocationFound = ({ height, position, messagePopup, zoom }) => {
         <Map height={height}
             position={position}
             zoom={zoom}
-            scrollWheelZoom={false}
-            CustonMarket={<LocationMarker position={position} messagePopup={messagePopup} />}
-        />
+            scrollWheelZoom={false}>
+            <LocationMarker position={position} messagePopup={messagePopup} />
+        </Map>
     )
 }
 
