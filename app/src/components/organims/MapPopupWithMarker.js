@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Map from '../molecules/Map';
 import PopupWithMarker from '../molecules/PopupWithMarker';
 
-const MapPopupWithMarket = ({ height, position, messagePopup, zoom }) => {
+const MapPopupWithMarker = ({ height, position, messagePopup, zoom }) => {
 
     return (
         <Map height={height}
@@ -15,9 +15,9 @@ const MapPopupWithMarket = ({ height, position, messagePopup, zoom }) => {
     )
 }
 
-export default MapPopupWithMarket;
+export default MapPopupWithMarker;
 
-MapPopupWithMarket.propTypes = {
+MapPopupWithMarker.propTypes = {
     height: PropTypes.string,
     position: PropTypes.array.isRequired,
     messagePopup: PropTypes.string.isRequired,

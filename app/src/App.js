@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import MapPopupWithMarket from './components/organims/MapPopupWithMarket';
+import MapPopupWithMarker from './components/organims/MapPopupWithMarker';
 import MapEventLocationFound from './components/organims/MapEventLocationFound';
 import MapVectorLayers from './components/organims/MapVectorLayers';
 import MapSvgOverlay from './components/organims/MapSvgOverlay';
@@ -36,7 +36,7 @@ const App = () => {
     <StyledApp>
       <div className="mapWrapper">
         <h1>Map popup with market</h1>
-        <MapPopupWithMarket height={height} position={position} messagePopup={messagePopup} zoom={zoom} />
+        <MapPopupWithMarker height={height} position={position} messagePopup={messagePopup} zoom={zoom} />
       </div>
 
       <div className="mapWrapper">
