@@ -23,9 +23,9 @@ const MapPopupWithMarket = ({ height, position, messagePopup, zoom }) => {
         <Map height={height}
             position={position}
             zoom={zoom}
-            scrollWheelZoom={false}
-            CustonMarket={<PopupWithMarket position={position} messagePopup={messagePopup} />}
-        />
+            scrollWheelZoom={false}>
+            <PopupWithMarket position={position} messagePopup={messagePopup} />
+        </Map>
     )
 }
 
