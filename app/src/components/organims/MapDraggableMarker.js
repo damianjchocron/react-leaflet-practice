@@ -44,9 +44,10 @@ const MapDraggableMarker = ({ height, position, zoom }) => {
         <Map height={height}
             position={position}
             zoom={zoom}
-            scrollWheelZoom={false}
-            CustonMarket={<DraggableMarker center={position} />}
-        />)
+            scrollWheelZoom={false}>
+
+            <DraggableMarker center={position} />
+        </Map>)
 }
 
 export default MapDraggableMarker;
