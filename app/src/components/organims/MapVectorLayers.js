@@ -82,9 +82,9 @@ const MapVectorLayers = ({ height, position, messagePopup, zoom }) => {
         <Map height={height}
             position={position}
             zoom={zoom}
-            scrollWheelZoom={false}
-            CustonMarket={<VectorLayers position={position} messagePopup={messagePopup} />}
-        />
+            scrollWheelZoom={false}>
+            <VectorLayers position={position} messagePopup={messagePopup} />
+        </Map>
     )
 }
 
